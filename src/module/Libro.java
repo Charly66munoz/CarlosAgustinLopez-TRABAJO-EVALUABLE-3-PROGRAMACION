@@ -18,6 +18,7 @@ package module;
 
 
      public void mostrarDatos(){
+         System.out.println(" ");
         System.out.printf("El nombre del libro es: %s %n",nombreDelLibro);
         System.out.printf("El autor es: %s %n",autor);
         System.out.printf("Tiene %d: %n",numeroPaginas);
@@ -25,7 +26,15 @@ package module;
 
     }
 
-    public String getAutor(){
+     public String getNombreDelLibro() {
+         return nombreDelLibro;
+     }
+
+     public void setNombreDelLibro(String nombreDelLibro) {
+         this.nombreDelLibro = nombreDelLibro;
+     }
+
+     public String getAutor(){
         return this.autor;
     }
 

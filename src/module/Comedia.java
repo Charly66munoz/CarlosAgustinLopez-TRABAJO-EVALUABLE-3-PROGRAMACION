@@ -2,29 +2,32 @@ package module;
 
 public class Comedia extends Libro {
 
-    private int calificacion;
-    private Tipo tipo;
+    private String tipoDeHumor;
+
 
     public Comedia(){}
-    public Comedia(String nombreDelLibro, String autor, int numeroPaginas, String iSBN,  Tipo tipo, int calificacion) {
+    public Comedia(String nombreDelLibro, String autor, int numeroPaginas, String iSBN, String tipoDeHumor) {
         super(nombreDelLibro, autor, numeroPaginas, iSBN);
-        this.tipo = tipo;
-        this.calificacion = calificacion;
+        this.tipoDeHumor = tipoDeHumor;
     }
 
     @Override
     public void mostrarDatos() {
         super.mostrarDatos();
-        System.out.println("El genero es "+tipo);
-        System.out.println("La calficacion "+calificacion);
+        System.out.println("El genero es "+Tipo.Comedia);
+        System.out.println("Tipo de humor "+tipoDeHumor);
 
 
     }
 
-    public int getCalificacion() {
-        return calificacion;
+    public String getTipoDeHumor() {
+        return tipoDeHumor;
     }
-    public void setCalificacion(int calificacion){
-        this.calificacion= calificacion;
+    public void setTipoDeHumor(String tipoDeHumor){
+        this.tipoDeHumor= tipoDeHumor;
+    }
+
+    public Tipo getTipo(){
+        return Tipo.Comedia; //IDENTIFICADOR PARA PODER HACER FILTRADO
     }
 }
