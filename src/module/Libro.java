@@ -26,6 +26,8 @@ package module;
 
     }
 
+     public abstract Tipo getTipo();
+
      public String getNombreDelLibro() {
          return nombreDelLibro;
      }

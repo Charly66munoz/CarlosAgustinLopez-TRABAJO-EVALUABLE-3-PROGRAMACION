@@ -27,7 +27,8 @@ public class Comedia extends Libro {
         this.tipoDeHumor= tipoDeHumor;
     }
 
-    public Tipo getTipo(){
+    @Override
+    public Tipo getTipo() {
         return Tipo.Comedia; //IDENTIFICADOR PARA PODER HACER FILTRADO
     }
 }

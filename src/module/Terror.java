@@ -27,7 +27,8 @@ public class Terror extends Libro {
         this.calificacion = calificacion;
     }
 
-    public Tipo getTipo(){
-        return Tipo.Terror; //IDENTIFICADOR PARA PODER HACER FILTRADO
+    @Override
+    public Tipo getTipo() {
+        return Tipo.Terror;
     }
 }

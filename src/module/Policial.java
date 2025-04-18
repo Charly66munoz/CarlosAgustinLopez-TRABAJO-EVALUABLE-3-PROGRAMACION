@@ -76,11 +76,8 @@ public class Policial extends Libro {
         return null;
     }
 
-
-
-
-
-    public Tipo getTipo(){
+    @Override
+    public Tipo getTipo() {
         return Tipo.Policial; //IDENTIFICADOR PARA PODER HACER FILTRADO
     }
 
@@ -104,8 +101,6 @@ public class Policial extends Libro {
             System.out.println("El nombre es "+ nombre +","+ apellido );
 
         }
-
-
 
 
         public String getNombre() {
