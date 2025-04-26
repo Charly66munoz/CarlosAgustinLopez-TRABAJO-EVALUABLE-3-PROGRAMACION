@@ -1,11 +1,8 @@
 package controller;
-import module.Libro;
-import module.Policial;
-import module.Tipo;
+import module.*;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Biblioteca {
@@ -107,29 +104,32 @@ public class Biblioteca {
                 // Escribir los libros de cada catálogo
                 writer.println("Catálogo: " + catalogo.getNombre());
                 for (Libro libro : catalogo.getLibros()) {
-                    writer.println(libro.toString());
+                    if (libro.getTipo()== Tipo.Policial) {
+                        Policial libro1 = (Policial) libro;
+
+                        writer.printf(libro.getNombreDelLibro() + ", " + libro.getiSBN() + ", " + libro.getAutor() + ", " + libro.getTipo() + ", " + libro.getNumeroPaginas()+ ", Personajes: " );
+                        for (Policial.Personaje l: libro1.getPersonajes()){
+                            writer.printf(l.getNombre() + " " + l.getApellido()+". ");
+                        }
+                        writer.println(" ");
+
+                    } else if (libro.getTipo()== Tipo.Terror) {
+                        Terror libro1 = (Terror) libro;
+                        writer.println(libro.getNombreDelLibro() + ", " + libro.getiSBN() + ", " + libro.getAutor() + ", " + libro.getTipo() + ", " + libro.getNumeroPaginas()+ ", " + libro1.getCalificacion());
+                    }else if(libro.getTipo()== Tipo.Comedia){
+                        Comedia libro1 = (Comedia) libro;
+                            writer.println(libro.getNombreDelLibro() + ", " + libro.getiSBN() + ", " + libro.getAutor() + ", " + libro.getTipo() + ", " + libro.getNumeroPaginas()+ ", " + libro1.getTipoDeHumor());
+
+                    }
                 }
                 writer.println("");
             }
+            System.out.println(" ");
             System.out.println("Catálogo exportado exitosamente.");
         } catch (IOException e) {
             System.out.println("Error al exportar el catálogo: " + e.getMessage());
         }
     }
-
-    public void añadirPersonajeALibro(String isbn, String nombre, String apellido) {
-        Libro libro = estaLibro(isbn, biblioteca);
-
-        if (libro != null) {
-            if (libro instanceof Policial) {
-                Policial policial = (Policial) libro;
-                policial.anadirPersonaje(nombre, apellido);
-            }
-        }
-    }
-
-
-
 
 
     //catalogo -> clase anidada
@@ -221,7 +221,7 @@ public class Biblioteca {
 
     }
 
-    public static class CatalogoMixto extends Catalogo {
+    public class CatalogoMixto extends Catalogo {
 
         public CatalogoMixto(String nombre, int size) {
             super(nombre, size);
@@ -257,7 +257,6 @@ public class Biblioteca {
 
 
     }
-
 
     public class CatalogoEspecifico extends Catalogo {
 
@@ -325,29 +324,3 @@ public class Biblioteca {
     }
 }
 
-/*
-    public void añadirPersonajeALibro(String isbn, String nombre, String apellido) {
-        Libro libro = estaLibro(isbn, biblioteca);
-
-        if (libro != null) {
-            if (libro instanceof Policial) {
-                Policial policial = (Policial) libro;
-                policial.anadirPersonaje(nombre, apellido);
-            }
-        }
-    }
-
-    public void eliminarPersonajeALibro(String isbn, String nombre, String apellido) {
-        Libro libro = estaLibro(isbn, biblioteca);
-
-        if (libro != null) {
-            if (libro instanceof Policial) {
-                Policial policial = (Policial) libro;
-                String nombre1 = nombre;
-                policial.eliminarPersonaje(nombre, apellido);
-                policial.mostrarDatosPersona();
-            }
-        }
-
-
-    } */

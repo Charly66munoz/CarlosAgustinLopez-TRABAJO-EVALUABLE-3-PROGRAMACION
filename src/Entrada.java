@@ -2,12 +2,6 @@ import controller.Biblioteca;
 import module.*;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.function.Predicate;
-import java.util.List;
-
 public class Entrada {
 
     public static void main(String[] args) {
@@ -58,8 +52,7 @@ public class Entrada {
             catalogoMixto.anadirLibroCatalogo(libro3);
             catalogoMixto.anadirLibroCatalogo(libro5);
             catalogoMixto.anadirLibroCatalogo(libro6);
-            catalogoMixto.anadirLibroCatalogo(libro7);
-            catalogoMixto.anadirLibroCatalogo(libro8); //lo llevo al error
+            catalogoMixto.anadirLibroCatalogo(libro7);//lo llevo al error
         }catch (Biblioteca.NoHayMasEspacio e){
             System.out.println("Error al añadir libro " + e.getMessage());
         }
@@ -90,9 +83,9 @@ public class Entrada {
             catalogoTerror.anadirLibroCatalogo(libro4);
             catalogoTerror.anadirLibroCatalogo(libro1);//LIBRO DE OTRO TIPO PARA MOSTRAR BUEN FUNCIONAMIENTO DE CATALOGOS
             catalogoTerror.anadirLibroCatalogo(libro5);
-            catalogoTerror.anadirLibroCatalogo(libro6);
+            catalogoTerror.anadirLibroCatalogo(libro6);//lo llevo al error
 
-            //lo llevo al error
+
         }catch (Biblioteca.NoHayMasEspacio e){
             System.out.println("Error al añadir libro" + e.getMessage());
         }

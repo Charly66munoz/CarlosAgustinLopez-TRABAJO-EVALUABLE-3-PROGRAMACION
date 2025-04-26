@@ -1,6 +1,6 @@
 package module;
 
-import controller.Biblioteca;
+
 
 import java.util.ArrayList;
 
@@ -74,6 +74,11 @@ public class Policial extends Libro {
 
         }
         return null;
+    }
+
+    public ArrayList<Personaje> getPersonajes(){
+            return this.personajes;
+
     }
 
     @Override
