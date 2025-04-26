@@ -46,7 +46,7 @@ public class Entrada {
         //creo un catalogo mixto
         Biblioteca.Catalogo catalogoMixto = biblioteca.crearCatalogoMixto("Mixto",4);
         //lo llevo al error
-
+        System.out.println(" ");
         try {
             catalogoMixto.anadirLibroCatalogo(libro1);
             catalogoMixto.anadirLibroCatalogo(libro3);
@@ -56,15 +56,15 @@ public class Entrada {
         }catch (Biblioteca.NoHayMasEspacio e){
             System.out.println("Error al añadir libro " + e.getMessage());
         }
-        
+        System.out.println(" ");
         try{
-            catalogoMixto.eliminarLibroCatalogo(libro9);
+            catalogoMixto.eliminarLibroCatalogo(libro6);
         }catch (Biblioteca.NoEncuentroLibro e){
             System.out.println(e.getMessage());
         }
-
+        System.out.println(" ");
         try {
-            catalogoMixto.anadirLibroCatalogo(libro8);
+            catalogoMixto.anadirLibroCatalogo(libro7);
         }catch (Biblioteca.NoHayMasEspacio e){
             System.out.println(e.getMessage());
         }
@@ -76,15 +76,16 @@ public class Entrada {
         System.out.println("-------");
 
         Biblioteca.Catalogo catalogoTerror = biblioteca.crearCatalogoEspecifico("Mejores de Terror",3, Tipo.Terror );
-        //lo llevo al error
+
 
         try {
             catalogoTerror.anadirLibroCatalogo(libro3);
             catalogoTerror.anadirLibroCatalogo(libro4);
             catalogoTerror.anadirLibroCatalogo(libro1);//LIBRO DE OTRO TIPO PARA MOSTRAR BUEN FUNCIONAMIENTO DE CATALOGOS
             catalogoTerror.anadirLibroCatalogo(libro5);
+            System.out.println(" ");
             catalogoTerror.anadirLibroCatalogo(libro6);//lo llevo al error
-
+            System.out.println(" ");
 
         }catch (Biblioteca.NoHayMasEspacio e){
             System.out.println("Error al añadir libro" + e.getMessage());
@@ -95,7 +96,7 @@ public class Entrada {
         }catch (Biblioteca.NoEncuentroLibro e){
             System.out.println(e.getMessage());
         }
-
+        System.out.println(" ");
         try {
             catalogoTerror.anadirLibroCatalogo(libro8);
         }catch (Biblioteca.NoHayMasEspacio e){
